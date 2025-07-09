@@ -12,13 +12,15 @@
             padding: 0;
             background-color: #000;
             color: white;
-            overflow: hidden;
+            overflow: hidden; /* Prevents scrolling on the body */
         }
         header {
             background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px 0;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         nav {
             margin: 20px 0;
@@ -38,6 +40,8 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
         h2 {
             color: #00ff00;
@@ -103,6 +107,12 @@
                 transform: translateY(100vh);
             }
         }
+        /* Added styles for scrolling */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px; /* Space for footer */
+        }
     </style>
 </head>
 <body>
@@ -121,56 +131,58 @@
     </nav>
 </header>
 
-<section class="hero">
-    <div class="container">
-        <h2>Unlock Your Device with Ease</h2>
-        <p>Fast and Reliable FRP Unlocking Service</p>
-        <button onclick="document.getElementById('submit').scrollIntoView();">Get Started</button>
-    </div>
-</section>
+<div class="content">
+    <section class="hero">
+        <div class="container">
+            <h2>Unlock Your Device with Ease</h2>
+            <p>Fast and Reliable FRP Unlocking Service</p>
+            <button onclick="document.getElementById('submit').scrollIntoView();">Get Started</button>
+        </div>
+    </section>
 
-<section class="container" id="how-it-works">
-    <h2>Unlocking Made Simple</h2>
-    <ol>
-        <li><strong>Enter Fastboot Mode:</strong> Power off your device and enter Fastboot mode.</li>
-        <li><strong>Download the Tool:</strong> Get the unlocking tool from <a href="https://drive.google.com/file/d/1FWnu3IvZF-dD5WYAqE17Q9gdG6BBuiJN/view?usp=drive_link" target="_blank" style="color: #00ff00; text-decoration: underline;">this link</a>.</li>
-        <li><strong>Read Fastboot:</strong> Connect your device and read the Fastboot information.</li>
-        <li><strong>Submit Your Serial Number:</strong> Fill in the form below with your Serial Number.</li>
-        <li><strong>Wait for Processing:</strong> Unlocking process takes 1-24 hours. We’ll notify you once done.</li>
-    </ol>
-</section>
+    <section class="container" id="how-it-works">
+        <h2>Unlocking Made Simple</h2>
+        <ol>
+            <li><strong>Enter Fastboot Mode:</strong> Power off your device and enter Fastboot mode.</li>
+            <li><strong>Download the Tool:</strong> Get the unlocking tool from <a href="https://drive.google.com/file/d/1FWnu3IvZF-dD5WYAqE17Q9gdG6BBuiJN/view?usp=drive_link" target="_blank" style="color: #00ff00; text-decoration: underline;">this link</a>.</li>
+            <li><strong>Read Fastboot:</strong> Connect your device and read the Fastboot information.</li>
+            <li><strong>Submit Your Serial Number:</strong> Fill in the form below with your Serial Number.</li>
+            <li><strong>Wait for Processing:</strong> Unlocking process takes 1-24 hours. We’ll notify you once done.</li>
+        </ol>
+    </section>
 
-<section class="container" id="submit">
-    <div class="form-container">
-        <h2>Submit Your Serial Number</h2>
-        <form action="submit_serial.php" method="POST">
-            <label for="serial">Serial Number:</label>
-            <input type="text" id="serial" name="serial" required>
-            <button type="submit">Unlock Now</button>
-        </form>
-        <p>Need help? Contact us on WhatsApp: <a href="https://wa.me/60178040403" style="color: #00ff00; text-decoration: underline;">+60178040403</a></p>
-    </div>
-</section>
+    <section class="container" id="submit">
+        <div class="form-container">
+            <h2>Submit Your Serial Number</h2>
+            <form action="submit_serial.php" method="POST">
+                <label for="serial">Serial Number:</label>
+                <input type="text" id="serial" name="serial" required>
+                <button type="submit">Unlock Now</button>
+            </form>
+            <p>Need help? Contact us on WhatsApp: <a href="https://wa.me/60178040403" style="color: #00ff00; text-decoration: underline;">+60178040403</a></p>
+        </div>
+    </section>
 
-<section class="container" id="testimonials">
-    <h2>What Our Clients Say</h2>
-    <p>"Great service! My device was unlocked within hours!" - Client A</p>
-    <p>"Fast and reliable. Highly recommend!" - Client B</p>
-</section>
+    <section class="container" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <p>"Great service! My device was unlocked within hours!" - Client A</p>
+        <p>"Fast and reliable. Highly recommend!" - Client B</p>
+    </section>
 
-<section class="container" id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-        <details>
-            <summary>How long does the unlocking process take?</summary>
-            <p>The process typically takes between 1 to 24 hours.</p>
-        </details>
-        <details>
-            <summary>Is it safe to unlock my device?</summary>
-            <p>Yes, our methods are safe and secure.</p>
-        </details>
-    </div>
-</section>
+    <section class="container" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>How long does the unlocking process take?</summary>
+                <p>The process typically takes between 1 to 24 hours.</p>
+            </details>
+            <details>
+                <summary>Is it safe to unlock my device?</summary>
+                <p>Yes, our methods are safe and secure.</p>
+            </details>
+        </div>
+    </section>
+</div>
 
 <footer>
     <p>© 2023 Zuu Caster GSM. All rights reserved.</p>
